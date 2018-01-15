@@ -24,6 +24,7 @@ namespace Tunnikontrolli_järelvastamine
                 Console.WriteLine("Kui JAH, siis vajuta suvalist nr-it");
 
                 ConsoleKeyInfo input = Console.ReadKey();
+                Console.WriteLine();
                 int sisend2 = int.Parse(input.KeyChar.ToString());
 
                 
@@ -32,9 +33,11 @@ namespace Tunnikontrolli_järelvastamine
                 {
                     break;
                 }
+                Console.Clear();
             }
+            var result = String.Join(", ", list.ToArray());
             Console.WriteLine("Sinu sisestatud andmed olid:");
-            list.ForEach(Console.WriteLine);
+            Console.WriteLine("[{0}]", string.Join(", ", list));
 
             Random rnd = new Random();
             int indeks = rnd.Next(list.Count);
